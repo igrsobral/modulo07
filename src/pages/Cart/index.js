@@ -21,7 +21,7 @@ function Cart({ cart }) {
           </tr>
         </thead>
         <tbody>
-          {cart.map(product => (
+          {cart.map((product) => (
             <tr>
               <td>
                 <img src={product.image} alt="tenis" />
@@ -40,7 +40,7 @@ function Cart({ cart }) {
                 </button>
               </td>
               <td>
-                <strong>R$ 258,80</strong>
+                <strong>R$ 259,80</strong>
               </td>
               <td>
                 <button type="button">
@@ -64,7 +64,7 @@ function Cart({ cart }) {
   );
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   cart: state.cart,
 });
 
