@@ -21,7 +21,7 @@ function Cart({ cart }) {
           </tr>
         </thead>
         <tbody>
-          {cart.map((product) => (
+          {cart.map(product => (
             <tr>
               <td>
                 <img src={product.image} alt="tenis" />
@@ -34,7 +34,7 @@ function Cart({ cart }) {
                 <button type="button">
                   <MdRemoveCircleOutline size={20} color="#7159C1" />
                 </button>
-                <input type="number" readOnly value={2} />
+                <input type="number" readOnly value={product.amount} />
                 <button type="button">
                   <MdAddCircleOutline size={20} color="#7159C1" />
                 </button>
@@ -64,7 +64,7 @@ function Cart({ cart }) {
   );
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   cart: state.cart,
 });
 
