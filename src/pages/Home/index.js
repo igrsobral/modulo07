@@ -18,7 +18,7 @@ class Home extends Component {
   async componentDidMount() {
     const response = await api.get('products');
 
-    const data = response.data.map((product) => ({
+    const data = response.data.map(product => ({
       ...product,
       priceFormatted: formatPrice(product.price),
     }));
@@ -26,7 +26,7 @@ class Home extends Component {
     this.setState({ products: response.data });
   }
 
-  handleAddProduct = (id) => {
+  handleAddProduct = id => {
     const { addToCartRequest } = this.props;
 
     addToCartRequest(id);
@@ -37,7 +37,7 @@ class Home extends Component {
     const { amount } = this.props;
     return (
       <ProductList>
-        {products.map(product => (
+        {products.map((product) => (
           <li key={product.id}>
             <img src={product.image} alt={product.title} />
             <strong>{product.title}</strong>
@@ -61,7 +61,7 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   amount: state.cart.reduce((amount, product) => {
     amount[product.id] = product.amount;
 
@@ -69,6 +69,7 @@ const mapStateToProps = state => ({
   }, {}),
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators(CartActions, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CartActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
