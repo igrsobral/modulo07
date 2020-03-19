@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an ecommerce that was made with React ande some libs like Redux api, Redux Sagas, React Toastify, styled components and others.
 
 ## Available Scripts
 
